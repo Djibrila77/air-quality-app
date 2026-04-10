@@ -26,8 +26,8 @@ st.markdown("""
 
 
 # Chargement des fichiers
-model = joblib.load("../output/xgboost_model.pkl")
-features = joblib.load("../output/features.pkl")
+model = joblib.load("xgboost_model.pkl")
+features = joblib.load("features.pkl")
 
 # HEADER
 st.title("🌍 Prédiction intelligente de la pollution d'une Smart City")
