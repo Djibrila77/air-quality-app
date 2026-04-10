@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
+import os
 
 st.set_page_config(
     page_title="Air Quality Predictor",
@@ -26,8 +27,12 @@ st.markdown("""
 
 
 # Chargement des fichiers
-model = joblib.load("xgboost_model.pkl")
-features = joblib.load("features.pkl")
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+
+model = joblib.load(os.path.join(BASE_DIR, "xgboost_model.pkl"))
+features = joblib.load(os.path.join(BASE_DIR, "features.pkl"))
 
 # HEADER
 st.title("🌍 Prédiction intelligente de la pollution d'une Smart City")
